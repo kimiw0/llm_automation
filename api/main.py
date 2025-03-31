@@ -6,10 +6,19 @@ import zipfile
 import pandas as pd
 import tempfile
 from dotenv import load_dotenv
+from mangum import Mangum
 
 load_dotenv()
 
 app = FastAPI()
+
+##adding vercel handler 
+
+@app.get("/")
+def read_root():
+    return {"message": "Hello from FastAPI on Vercel!"}
+
+handler = Mangum(app)
 
 # Load proxy token and proxy base URL
 AIPROXY_TOKEN = os.getenv("AIPROXY_TOKEN")
