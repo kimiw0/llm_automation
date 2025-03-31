@@ -33,7 +33,7 @@ client = OpenAI(
     base_url=AIPROXY_BASE_URL
 )
 
-@app.post("/api/")
+@app.post("/")
 async def process_question(
     question: str = Form(...),
     file: UploadFile = File(None)
