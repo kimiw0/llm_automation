@@ -19,6 +19,7 @@ def read_root():
     return {"message": "Hello from FastAPI on Vercel!"}
 
 handler = Mangum(app)
+async def process_question(...):
 
 # Load proxy token and proxy base URL
 AIPROXY_TOKEN = os.getenv("AIPROXY_TOKEN")
